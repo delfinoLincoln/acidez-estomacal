@@ -4,16 +4,16 @@ Trabalho de química sobre acidez do estômago e antiácidos, feito com **Vite +
 
 ## Executar
 
-É necessário Node.js 22.18 ou superior (o desenvolvimento foi testado com Node 24).
+É necessário Node.js 22.18 ou superior.
 
 No terminal, dentro desta pasta:
 
 ```powershell
-npm.cmd install
-npm.cmd run dev
+npm install
+npm run dev
 ```
 
-Abra o endereço indicado pelo Vite, normalmente http://127.0.0.1:5173.
+Abra o endereço indicado pelo Vite, normalmente http://127.0.0.1:5173 ou visite https://acidez-estomacal.vercel.app/
 No PowerShell, `npm.cmd` evita o bloqueio de execução de scripts `npm.ps1`.
 Em outros terminais, pode usar `npm`.
 
@@ -29,21 +29,20 @@ O jogo começa do zero ao sair da tela ou recarregar a página. Não há cadastr
 
 ## Mapa do projeto
 
-Veja [ARCHITECTURE.md](ARCHITECTURE.md) para a estrutura e as responsabilidades.
+Veja [ARCHITECTURE.md](stomach-acid/ARCHITECTURE.md) para a estrutura e as responsabilidades.
 
-| Pasta | Responsabilidade |
-| --- | --- |
-| src/app/ | Composição das telas e navegação. |
-| src/pages/ | Página explicativa. |
-| src/components/ | Layout, fontes e créditos compartilhados. |
-| src/features/chemistry/ | Tipos, substâncias e balanço químico. |
+| Pasta                    | Responsabilidade                             |
+| ------------------------ | -------------------------------------------- |
+| src/app/                 | Composição das telas e navegação.            |
+| src/pages/               | Página explicativa.                          |
+| src/components/          | Layout, fontes e créditos compartilhados.    |
+| src/features/chemistry/  | Tipos, substâncias e balanço químico.        |
 | src/features/laboratory/ | Estado do jogo, missões, página e controles. |
-| src/features/molecular/ | Componentes React e cena Three.js. |
-| src/features/theme/ | Alternância e persistência do tema. |
-| src/styles/ | Estilos com um único ponto de entrada. |
-| tests/unit/ e tests/e2e/ | Testes de lógica e navegador. |
+| src/features/molecular/  | Componentes React e cena Three.js.           |
+| src/features/theme/      | Alternância e persistência do tema.          |
+| src/styles/              | Estilos com um único ponto de entrada.       |
+| tests/unit/ e tests/e2e/ | Testes de lógica e navegador.                |
 
-O roteiro continua em [ROTEIRO.md](ROTEIRO.md).
 
 ## Testar e gerar a versão final
 
@@ -69,8 +68,6 @@ O estado inicial contém 12 mmol fictícios de HCl. Cada clique representa 1 mmo
 O modelo assume reação completa e não calcula pH, solubilidade, cinética, volume, tamponamento ou secreção gástrica. As metas são exercícios de estequiometria e não representam doses ou metas clínicas. Os símbolos mostram quantidades; não representam trajetórias moleculares reais. A água já existente e os íons espectadores são omitidos.
 
 Fontes científicas estão na própria página. Referências técnicas: [React](https://react.dev/learn/build-a-react-app-from-scratch) e [Vite](https://vite.dev/guide/).
-
-Ferramenta de IA utilizada: ChatGPT (OpenAI), por meio do Codex. Revisem o conteúdo e ensaiem a explicação do código.
 
 ## Visualização 3D e temas
 
