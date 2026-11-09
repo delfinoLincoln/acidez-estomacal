@@ -1,7 +1,7 @@
 export default function Sources() {
   return (
     <details>
-      <summary>Fontes e uso de inteligência artificial</summary>
+      <summary>Fontes & Autoria</summary>
       <p>
         <a href="https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works">
           NIDDK — funcionamento da digestão
@@ -18,10 +18,7 @@ export default function Sources() {
         .
       </p>
       <p>
-        Desenvolvido com auxílio do ChatGPT (OpenAI), por meio do Codex, para
-        programação, organização e explicações. Tecnologias: React, TypeScript,
-        HTML e CSS; Vite para executar e gerar a aplicação. O grupo deve revisar
-        o conteúdo e explicar o código com suas próprias palavras.
+        Projeto de Química I, desenvolvido pelo discente Lincoln Delfino no IFPR - Campus Paranaguá.
       </p>
     </details>
   );
