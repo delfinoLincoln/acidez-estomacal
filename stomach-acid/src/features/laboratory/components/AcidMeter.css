@@ -1,0 +1,64 @@
+.acid-meter {
+    padding: 19px 0 6px;
+}
+
+.meter-caption,
+.meter-labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.meter-caption {
+    font:
+        9px Consolas,
+        monospace;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.meter-caption>span:last-child {
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.meter-track {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    margin: 13px 0 10px;
+}
+
+.meter-track>span {
+    flex: 1;
+    min-width: 0;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--line);
+    transition: background 0.25s;
+}
+
+.meter-track>span.filled {
+    background: var(--accent);
+    box-shadow: 0 0 12px #65d8ee22;
+}
+
+.meter-target {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    width: 2px;
+    background: var(--orange);
+    transform: translateX(-2px);
+}
+
+.meter-labels {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.meter-labels strong {
+    font-weight: 500;
+    color: var(--accent);
+}

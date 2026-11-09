@@ -1,0 +1,971 @@
+:root {
+    color-scheme: dark;
+    --paper: #080f1b;
+    --ink: #e7eef8;
+    --muted: #a4b4c8;
+    --line: #29384c;
+    --green: #65d8ee;
+    --orange: #ff9379;
+    --white: #111d2e;
+    --soft: #17263a;
+    --accent: #65d8ee;
+    --accent-ink: #062331;
+    --surface: #111d2e;
+    --surface-alt: #152238;
+    --stage: #0b1524;
+    --grid: #36516c33;
+    --success: #123e36;
+    --shadow: 0 20px 70px #0003;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --paper: #eef3f9;
+    --ink: #152c45;
+    --muted: #53667d;
+    --line: #c6d4e2;
+    --green: #086d88;
+    --orange: #b44029;
+    --white: #fff;
+    --soft: #e1eaf4;
+    --accent: #087b99;
+    --accent-ink: #fff;
+    --surface: #fff;
+    --surface-alt: #e6eef7;
+    --stage: #dde9f3;
+    --grid: #819bb72b;
+    --success: #daf0e6;
+    --shadow: 0 20px 70px #18334d12;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+}
+
+button,
+select,
+a {
+    touch-action: manipulation;
+}
+
+button {
+    font-weight: 600;
+}
+
+header {
+    max-width: 1400px;
+    padding: 20px 36px;
+    min-height: 88px;
+}
+
+.brand {
+    font-size: 14px;
+    letter-spacing: -0.3px;
+}
+
+.brand::before {
+    content: "◈";
+    font-size: 27px;
+    color: var(--accent);
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+nav {
+    padding: 4px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 12px;
+    gap: 4px;
+}
+
+nav a {
+    padding: 8px 18px;
+    min-height: 40px;
+    color: var(--muted);
+}
+
+nav a[aria-current="page"] {
+    color: var(--ink);
+    background: var(--soft);
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 10px 14px;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+}
+
+main {
+    max-width: 1380px;
+    padding: 0 36px;
+}
+
+.intro-grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 50px;
+    padding: 65px 0 40px;
+}
+
+.eyebrow {
+    font:
+        600 10px/1.5 "Consolas",
+        monospace;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+h1,
+.intro-grid h1 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(44px, 5.7vw, 78px);
+    font-weight: 750;
+    letter-spacing: -3.5px;
+    line-height: 1.06;
+}
+
+h1 em {
+    font-style: normal;
+    font-weight: 750;
+    color: var(--accent);
+}
+
+.intro-grid>div>p:not(.eyebrow) {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.start-link,
+.primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: 1px solid var(--accent);
+    font-weight: 700;
+    border-radius: 9px;
+    min-height: 48px;
+}
+
+.start-link:hover,
+.primary:hover:not(:disabled) {
+    background: var(--accent);
+    filter: brightness(1.12);
+    box-shadow: 0 0 25px #4ad5e323;
+}
+
+.hero-figure {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.hero-figure .visual-top {
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.hero-caption {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    text-align: left;
+    gap: 4px;
+}
+
+.hero-caption strong {
+    font-size: 16px;
+}
+
+.tag {
+    border-radius: 20px;
+    color: var(--accent);
+    font-size: 9px;
+    letter-spacing: 1px;
+    background: var(--soft);
+    white-space: normal;
+}
+
+.molecular-view {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 60% 40%, #34789415, transparent 60%),
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px), var(--stage);
+    background-size:
+        auto,
+        32px 32px,
+        32px 32px,
+        auto;
+}
+
+.scene-hud {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    right: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    pointer-events: none;
+    z-index: 1;
+    font:
+        10px "Consolas",
+        monospace;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.scene-hud i {
+    display: inline-block;
+    background: var(--accent);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    margin-right: 7px;
+    box-shadow: 0 0 12px var(--accent);
+}
+
+.scene-canvas {
+    height: 440px;
+    width: 100%;
+    cursor: grab;
+}
+
+.scene-canvas:active {
+    cursor: grabbing;
+}
+
+.scene-canvas canvas {
+    display: block;
+    max-width: 100%;
+    touch-action: none;
+}
+
+.hero-figure .scene-canvas {
+    height: 360px;
+}
+
+.scene-toolbar {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.scene-toolbar button {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 8px 12px;
+    border-radius: 7px;
+    min-height: 38px;
+    font-size: 11px;
+}
+
+.scene-toolbar button:hover,
+.scene-toolbar button[aria-pressed="true"] {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.scene-toolbar button:first-child,
+.scene-toolbar button:nth-child(2) {
+    font-size: 20px;
+    min-width: 38px;
+    padding: 2px;
+}
+
+.scene-hint {
+    text-align: center;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 10px 8px 14px;
+}
+
+.scene-fallback {
+    position: absolute;
+    top: 65px;
+    left: 25px;
+    right: 25px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 12px;
+    color: var(--ink);
+    font-size: 13px;
+}
+
+.scene-loading {
+    height: 360px;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+}
+
+.section-heading h2,
+.presentation>h2,
+.challenge h2 {
+    font:
+        650 34px/1.2 "Segoe UI",
+        Arial,
+        sans-serif;
+    letter-spacing: -1px;
+}
+
+.learn {
+    padding: 45px 0 35px;
+}
+
+.learn-grid {
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.learn-grid article {
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.number {
+    font:
+        600 15px "Consolas",
+        monospace;
+    color: var(--accent);
+}
+
+.learn-grid h3 {
+    font-size: 20px;
+}
+
+.learn-grid p,
+.present-grid p {
+    line-height: 1.8;
+}
+
+.equation-lesson {
+    gap: 24px;
+    padding: 15px 0 45px;
+}
+
+.equation-lesson>div {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    padding: 28px;
+}
+
+.equation-lesson h2 {
+    font-size: 24px;
+}
+
+.equation-lesson aside {
+    border: 1px solid var(--line);
+    background: var(--surface-alt);
+    border-radius: 12px;
+}
+
+.equation-lesson .big-equation {
+    font-family: "Consolas", monospace;
+    font-size: clamp(17px, 2vw, 25px);
+    background: var(--soft);
+    padding: 18px;
+    overflow-wrap: anywhere;
+}
+
+.challenge {
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    color: var(--ink);
+    padding: 38px;
+}
+
+.challenge .eyebrow {
+    color: var(--accent);
+}
+
+.challenge .light-note {
+    color: var(--muted);
+}
+
+.start-link.light {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+.game-numbers {
+    font:
+        600 32px "Consolas",
+        monospace;
+    color: var(--accent);
+}
+
+.game-invite {
+    justify-self: center;
+}
+
+.present-grid article {
+    background: var(--surface);
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.present-grid {
+    gap: 18px;
+}
+
+.game-heading {
+    padding: 30px 0 22px;
+}
+
+.game-heading h1 {
+    font:
+        700 clamp(32px, 4vw, 48px)/1.1 "Segoe UI",
+        Arial,
+        sans-serif;
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.score {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.score strong {
+    color: var(--accent);
+    font-family: "Consolas", monospace;
+}
+
+.mission-steps {
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.mission-steps li {
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 12px 16px;
+    background: var(--surface);
+}
+
+.mission-steps li[aria-current="step"] {
+    border: 1px solid var(--accent);
+    background: var(--surface-alt);
+}
+
+.mission-steps span {
+    background: var(--soft);
+    color: var(--accent);
+}
+
+.prediction {
+    background: var(--surface);
+    border-color: var(--line);
+    padding: 18px 24px;
+}
+
+.prediction-options button {
+    background: var(--soft);
+    border-color: var(--line);
+    color: var(--ink);
+    border-radius: 8px;
+}
+
+.prediction-options button:hover:not(:disabled) {
+    background: var(--surface-alt);
+    border-color: var(--accent);
+}
+
+.prediction-options button[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+.lab {
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border-radius: 16px;
+}
+
+.lab-top {
+    background: var(--surface-alt);
+    padding: 16px 24px;
+}
+
+.lab-top h2 {
+    font-size: 15px;
+}
+
+.workspace {
+    grid-template-columns: minmax(0, 1.65fr) minmax(290px, 1fr);
+}
+
+.visual {
+    padding: 18px;
+    background: var(--surface);
+}
+
+.visual>.visual-top {
+    margin-bottom: 12px;
+}
+
+.visual-top>span {
+    font-size: 9px;
+}
+
+.text-button {
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 5px 10px;
+    min-height: 34px;
+}
+
+.visual .legend {
+    padding-top: 15px;
+}
+
+.acid {
+    background: #fb805f;
+}
+
+.water {
+    background: #35bfe4;
+}
+
+.controls {
+    background: var(--surface-alt);
+    padding: 25px;
+}
+
+.chemical-name {
+    font:
+        650 25px/1.2 "Segoe UI",
+        Arial,
+        sans-serif;
+    color: var(--ink);
+}
+
+select {
+    background: var(--surface);
+    border-color: var(--line);
+    color: var(--ink);
+    border-radius: 8px;
+}
+
+.dose {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px;
+    margin: 18px 0;
+}
+
+.dose strong {
+    color: var(--accent);
+    font-family: "Consolas", monospace;
+}
+
+.secondary {
+    border-color: var(--line);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 8px;
+}
+
+.secondary:hover {
+    color: var(--ink);
+    background: var(--soft);
+}
+
+.verify-button {
+    background: var(--soft);
+    border-color: var(--line);
+    color: var(--ink);
+    border-radius: 8px;
+}
+
+.verify-button:hover:not(:disabled) {
+    background: var(--surface);
+    border-color: var(--accent);
+}
+
+.observation {
+    border-left-color: var(--accent);
+}
+
+.observation p:last-child {
+    min-height: 0;
+    line-height: 1.7;
+}
+
+.stats {
+    gap: 10px;
+    border: 0;
+    padding: 0;
+    margin-top: 16px;
+}
+
+.stats>div {
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.stats strong {
+    font-family: "Consolas", monospace;
+    font-size: 25px;
+    color: var(--ink);
+}
+
+.reaction {
+    background: var(--surface-alt);
+    padding: 20px;
+}
+
+.reaction>span {
+    color: var(--accent);
+}
+
+.reaction p {
+    font-family: "Consolas", monospace;
+    font-size: clamp(16px, 1.8vw, 23px);
+    overflow-wrap: anywhere;
+}
+
+.mission-feedback {
+    background: var(--surface);
+    border-color: var(--line);
+}
+
+.mission-feedback.success {
+    background: var(--success);
+    border-color: #4b9c83;
+}
+
+.results h1 {
+    font-size: 58px;
+}
+
+.result-score {
+    font-family: "Consolas", monospace;
+    color: var(--accent);
+}
+
+.skip-link {
+    background: var(--surface);
+    color: var(--ink);
+}
+
+footer {
+    max-width: 1380px;
+}
+
+details {
+    font-size: 13px;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@media (min-width: 1100px) {
+    .hero-figure {
+        transform: perspective(1200px) rotateY(-4deg);
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .brand {
+        flex: 1;
+    }
+
+    .theme-toggle {
+        order: 2;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav a {
+        flex: 1;
+        text-align: center;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-top: 35px;
+    }
+
+    .hero-figure {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .intro-grid h1 {
+        font-size: 58px;
+    }
+
+    .intro-grid br {
+        display: none;
+    }
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+    }
+
+    .scene-canvas {
+        height: 400px;
+    }
+
+    .learn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .equation-lesson {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .game-invite {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 0 14px;
+    }
+
+    header {
+        padding: 14px;
+    }
+
+    .theme-toggle {
+        padding: 8px 10px;
+    }
+
+    .theme-toggle span {
+        font-size: 11px;
+    }
+
+    .brand {
+        font-size: 11px;
+    }
+
+    .brand::before {
+        margin-right: 7px;
+    }
+
+    .intro-grid h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero-figure {
+        padding: 12px;
+    }
+
+    .hero-figure .scene-canvas,
+    .scene-canvas {
+        height: 330px;
+    }
+
+    .scene-hud {
+        font-size: 8px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .scene-hud>span:last-child {
+        display: none;
+    }
+
+    .scene-toolbar {
+        gap: 5px;
+    }
+
+    .scene-toolbar button {
+        padding: 8px;
+        font-size: 10px;
+        min-height: 44px;
+    }
+
+    .scene-toolbar button:first-child,
+    .scene-toolbar button:nth-child(2) {
+        min-width: 40px;
+    }
+
+    .scene-hint {
+        font-size: 9px;
+    }
+
+    .game-heading {
+        gap: 12px;
+    }
+
+    .game-heading h1 {
+        font-size: 32px;
+    }
+
+    .score {
+        padding: 12px;
+    }
+
+    .mission-steps {
+        gap: 7px;
+    }
+
+    .mission-steps li {
+        font-size: 10px;
+        padding: 10px;
+        gap: 7px;
+    }
+
+    .prediction {
+        padding: 17px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .prediction h2 {
+        font-size: 17px;
+    }
+
+    .visual {
+        padding: 10px;
+    }
+
+    .stats>div {
+        padding: 9px;
+    }
+
+    .stats span {
+        font-size: 10px;
+    }
+
+    .stats strong {
+        font-size: 22px;
+    }
+
+    .stats small {
+        font-size: 11px;
+    }
+
+    .visual>.visual-top {
+        flex-wrap: wrap;
+    }
+
+    .lab-top {
+        padding: 14px;
+    }
+
+    .controls {
+        padding: 20px;
+    }
+
+    .learn-grid article {
+        padding: 22px;
+    }
+
+    .challenge {
+        padding: 24px;
+    }
+
+    .present-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .presentation>h2 {
+        font-size: 28px;
+    }
+
+    .results h1 {
+        font-size: 38px;
+    }
+
+    .reaction {
+        padding: 17px 12px;
+    }
+
+    .text-button {
+        min-height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+
+    .hero-figure {
+        transform: none;
+    }
+}
+
+.gas {
+    background: #8796ab;
+}

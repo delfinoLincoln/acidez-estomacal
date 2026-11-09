@@ -1,0 +1,24 @@
+/* A capa tem tipografia editorial; os controles mantêm a fonte da interface. */
+.intro-grid .cover-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(52px, 6.3vw, 88px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -3px;
+  margin: 18px 0 26px;
+}
+.intro-grid .cover-title em {
+  font-family: inherit;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--orange);
+}
+.intro-grid .cover-title br {
+  display: initial;
+}
+@media (max-width: 600px) {
+  .intro-grid .cover-title {
+    font-size: clamp(46px, 12vw, 66px);
+    letter-spacing: -2px;
+  }
+}

@@ -1,0 +1,74 @@
+.chapter-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 0 24px;
+}
+
+.chapter-page h1,
+.explorer-heading h1,
+.game-heading h1 {
+    font:
+        400 clamp(36px, 4.5vw, 60px)/1.1 Georgia,
+        serif;
+    letter-spacing: -1.8px;
+}
+
+.chapter-page h1 em,
+.explorer-heading h1 em {
+    font-family: inherit;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--orange);
+}
+
+.chapter-next {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--accent);
+    margin-bottom: 24px;
+}
+
+.reaction-explorer {
+    padding-top: 48px;
+}
+
+.lab {
+    border-top: 2px solid var(--accent);
+}
+
+.stats strong {
+    font-family: Consolas, monospace;
+}
+
+.challenge {
+    margin-bottom: 36px;
+    background:
+        radial-gradient(ellipse at 0% 100%, var(--soft), transparent 65%),
+        var(--surface);
+}
+
+.challenge h2 {
+    font:
+        400 36px/1.15 Georgia,
+        serif;
+}
+
+footer {
+    margin-top: 32px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .chapter-page {
+        padding-top: 28px;
+    }
+
+    .explorer-heading h1 {
+        font-size: 38px;
+    }
+}
